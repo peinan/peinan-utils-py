@@ -1,0 +1,7 @@
+*.swp
+*.swo
+.idea
+
+*.egg-info
+__pycache__
+*.pyc

@@ -5,17 +5,18 @@ Mostly about NLP.
 ## Install
 
 ```bash
-$ pip install -e 'git+https://github.com/peinan/peinan-utils-py#egg=peinan-utils'
+$ pip install -e git+https://github.com/peinan/peinan-utils-py#egg=peinan-utils
 ```
 
 ## Usage
+
+### Parser
 
 ```python
 # sample text
 >>> text = 'こんにちは！今日はいい天気ですね。これからどちらへ？'
 
 >>> from peinan_utils import Parser
-
 >>> p = Parser()
 
 # just parse input texts and get information about surfaces and features
@@ -64,4 +65,30 @@ $ pip install -e 'git+https://github.com/peinan/peinan-utils-py#egg=peinan-utils
 >>> p.set_dict('/usr/local/lib/mecab/dic/mecab-ipadic-neologd')
 >>> p.get_surfaces(sumomo)
 ['すもももももももものうち']
+```
+
+### Vectorizer
+
+```python
+# sample text
+>>> text = '今日はいい天気ですね。これからどちらへ？'
+
+>>> from peinan_utils import Vectorizer
+>>> v = Vectorizer()
+
+# make word ngram (the default n is 2)
+>>> v.make_word_ngram(text)
+[[('今日', 'は'), ('は', 'いい'), ('いい', '天気'), ('天気', 'です'), ('です', 'ね'), ('ね', '。')], [('これから', 'どちら'), ('どちら', 'へ'), ('へ', '？')]]
+
+# specify n
+>>> v.make_word_ngram(text, n=3)
+[[('今日', 'は', 'いい'), ('は', 'いい', '天気'), ('いい', '天気', 'です'), ('天気', 'です', 'ね'), ('です', 'ね', '。')], [('これから', 'どちら', 'へ'), ('どちら', 'へ', '？')]]
+
+# use BOS and EOS (the default BOS and EOS are '<s>' and </s>, respectively)
+>>> v.make_word_ngram(text, n=3, bos=v.BOS, eos=v.EOS)
+[[('<s>', '今日', 'は'), ('今日', 'は', 'いい'), ('は', 'いい', '天気'), ('いい', '天気', 'です'), ('天気', 'です', 'ね'), ('です', 'ね', '。'), ('ね', '。', '</s>')], [('<s>', 'これから', 'どちら'), ('これから', 'どちら', 'へ'), ('どちら', 'へ', '？'), ('へ', '？', '</s>')]]
+
+# make character ngram (the default n is 2)
+>>> v.make_char_ngram(text, n=2)
+[[('今', '日'), ('日', 'は'), ('は', 'い'), ('い', 'い'), ('い', '天'), ('天', '気'), ('気', 'で'), ('で', 'す'), ('す', 'ね'), ('ね', '。')], [('こ', 'れ'), ('れ', 'か'), ('か', 'ら'), ('ら', 'ど'), ('ど', 'ち'), ('ち', 'ら'), ('ら', 'へ'), ('へ', '？')]]
 ```

@@ -9,7 +9,7 @@ install-dev:
 
 .PHONY: uninstall-dev ## uninstall the pip package in the develop environment
 uninstall-dev:
-	pip uninstall $(PACHAGE_NAME) -y
+	pip uninstall $(PACKAGE_NAME) -y
 
 .PHONY: reinstall-dev ## uninstall and install the pip package in the develop environment
 reinstall-dev: uninstall-dev install-dev

@@ -1,3 +1,6 @@
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
-from .core import *
+from .parser import Parser
+from .vectorizer import Vectorizer
+from .matplotlib_utils import init_matplotlib
+init_matplotlib()

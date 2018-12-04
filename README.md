@@ -1,5 +1,7 @@
 # A util package for myself
 
+![](https://img.shields.io/badge/version-0.0.2-green.svg?style=flat-square) ![](https://img.shields.io/badge/python-3.6+-green.svg?style=flat-square) ![](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
+
 Mostly about NLP.
 
 ## Install
@@ -8,7 +10,7 @@ Mostly about NLP.
 $ pip install -e git+https://github.com/peinan/peinan-utils-py#egg=peinan-utils
 ```
 
-## Usage
+## Usages & Features
 
 ### Parser
 
@@ -92,3 +94,23 @@ $ pip install -e git+https://github.com/peinan/peinan-utils-py#egg=peinan-utils
 >>> v.make_char_ngram(text, n=2)
 [[('今', '日'), ('日', 'は'), ('は', 'い'), ('い', 'い'), ('い', '天'), ('天', '気'), ('気', 'で'), ('で', 'す'), ('す', 'ね'), ('ね', '。')], [('こ', 'れ'), ('れ', 'か'), ('か', 'ら'), ('ら', 'ど'), ('ど', 'ち'), ('ち', 'ら'), ('ら', 'へ'), ('へ', '？')]]
 ```
+
+### Matplotlib Utils
+
+```python
+# just import this package and then you can plot with Japanese font
+>>> import matplotlib.pyplot as plt
+>>> import peinan_utils
+
+# set background face color
+>>> fig = plt.figure()
+>>> fig.patch.set_facecolor('white')
+
+# plot with Japanese labels
+>>> plt.plot([1,2,3], [1,2,3])
+>>> plt.xlabel('x軸')
+>>> plt.ylabel('y軸')
+>>> plt.show()
+```
+
+![](https://raw.githubusercontent.com/peinan/peinan-utils-py/master/images/plot_result.png)

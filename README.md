@@ -1,4 +1,4 @@
-# A util package for myself
+# An util package for myself
 
 ![](https://img.shields.io/badge/version-0.0.2-green.svg?style=flat-square) ![](https://img.shields.io/badge/python-3.6+-green.svg?style=flat-square) ![](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
 

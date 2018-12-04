@@ -4,10 +4,16 @@ import matplotlib
 from matplotlib import font_manager
 
 
-def init_matplotlib():
+def init_matplotlib(weight='medium'):
+    """
+    Initialize matplotlib settings.
+    :param weight: you can choose one weight from 'thin', 'light', 'regular', 'medium', 'bold', 'black'.
+                   default is 'medium'
+    :return:
+    """
     FONTS_DIR = 'fonts'
     FONT_NAME = 'Noto Sans CJK JP'
-    FONT_WEIGHT = 'medium'
+    FONT_WEIGHT = weight
 
     font_settings = {
         'family': FONT_NAME,

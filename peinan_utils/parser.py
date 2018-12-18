@@ -33,7 +33,7 @@ class Parser:
     def parse(self, text: str, only_content_words: bool = False, fit_stopwords: bool = False) -> List[dict]:
         results = []
         for node in self.tagger.parse(text).rstrip('\n').splitlines():
-            if node == 'EOS':
+            if node == 'EOS' or node == '':
                 continue
 
             surface, feature = node.split('\t')

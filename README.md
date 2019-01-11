@@ -1,6 +1,6 @@
 # An util package for myself
 
-![](https://img.shields.io/badge/version-0.0.2-green.svg?style=flat-square) ![](https://img.shields.io/badge/python-3.6+-green.svg?style=flat-square) ![](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
+![](https://img.shields.io/badge/version-0.0.3-green.svg?style=flat-square) ![](https://img.shields.io/badge/python-3.6+-green.svg?style=flat-square) ![](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
 
 Mostly about NLP.
 
@@ -93,6 +93,31 @@ $ pip install -e git+https://github.com/peinan/peinan-utils-py#egg=peinan-utils
 # make character ngram (the default n is 2)
 >>> v.make_char_ngram(text, n=2)
 [[('今', '日'), ('日', 'は'), ('は', 'い'), ('い', 'い'), ('い', '天'), ('天', '気'), ('気', 'で'), ('で', 'す'), ('す', 'ね'), ('ね', '。')], [('こ', 'れ'), ('れ', 'か'), ('か', 'ら'), ('ら', 'ど'), ('ど', 'ち'), ('ち', 'ら'), ('ら', 'へ'), ('へ', '？')]]
+```
+
+### Statist
+
+sample.txt
+
+```
+あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、 郊外のぎらぎらひかる草の波。
+またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこども たち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えて いると、みんなむかし風のなつかしい青い幻燈のように思われます。
+では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書 きつけましょう。
+```
+
+```python
+In : from peinan_utils import Statist
+In : s = Statist('./sample.txt')
+
+# show all stats
+In : s.all_stats()
+Out: {'word_stats': {'num_token': 137, 'num_vocab': 90},  # num_token == 延べ語数, num_vocab == 異なり語数
+      'char_stats': {'num_token': 260, 'num_vocab': 109}}
+ 
+# show word stats with verbose mode
+In : s.calc_word_stats(verbose=True)
+Counter({'の': 15, '、': 12, 'で': 5, 'に': 4, 'た': 3, 'を': 3, '。': 3, 'あの': 2, 'イーハトーヴォ': 2, '風': 2, '青い': 2, 'れ': 2, 'なか': 2, 'たち': 2, 'と': 2, 'は': 2, 'すきとおっ': 1, '夏': 1, 'も': 1, '底': 1, '冷た': 1, 'さ': 1, 'もつ': 1, 'そら': 1, 'うつくしい': 1, '森': 1, '飾ら': 1, 'モリーオ': 1, '市': 1, '郊外': 1, 'ぎらぎら': 1, 'ひかる': 1, '草': 1, '波': 1, 'また': 1, 'その': 1, 'いっしょ': 1, 'なっ': 1, 'たくさん': 1, 'ひと': 1, 'ファゼーロ': 1, 'ロザーロ': 1, '羊': 1, '飼': 1, 'ミーロ': 1, 'や': 1, '顔': 1, '赤い': 1, 'こども': 1, '地主': 1, 'テーモ': 1, '山猫': 1, '博士': 1, 'ボーガント・デスト ゥパーゴ': 1, 'など': 1, 'いま': 1, 'この': 1, '暗い': 1, '巨': 1, 'き': 1, 'な': 1, '石': 1, '建物': 1, '考え': 1, 'て': 1, 'いる': 1, 'みんな': 1, 'むかし': 1, 'なつかしい': 1, '幻': 1, '燈': 1, 'よう': 1, '思わ': 1, 'ます': 1, 'わたくし': 1, 'いつか': 1, '小さな': 1, 'み': 1, 'だし': 1, 'つけ': 1, 'ながら': 1, 'しずか': 1, '年': 1, '五月': 1, 'から': 1, '十月': 1, 'まで': 1, '書きつけ': 1, 'ましょ': 1, 'う': 1})
+Out: {'num_token': 137, 'num_vocab': 90}
 ```
 
 ### Matplotlib Utils

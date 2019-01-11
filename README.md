@@ -108,7 +108,7 @@ sample.txt
 ```python
 In : from peinan_utils import Statist
 In : s = Statist('./sample.txt')
-# you can put data directly, either like below
+# you can put data directly such as below
 # In : s = Statist('あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、 郊外のぎらぎらひかる草の波。')
 # In : s = Statist([
 #          'あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、 郊外のぎらぎらひかる草の波。',

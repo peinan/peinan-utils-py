@@ -26,25 +26,31 @@ class Statist:
 
         return corpus
 
-    def all_stats(self) -> dict:
-        word_stats = self.calc_word_stats()
-        char_stats = self.calc_char_stats()
+    def all_stats(self, verbose=False) -> dict:
+        word_stats = self.calc_word_stats(verbose)
+        char_stats = self.calc_char_stats(verbose)
 
         return dict(
             word_stats=word_stats,
             char_stats=char_stats
         )
 
-    def calc_word_stats(self) -> dict:
-        c = Counter(list(chain.from_iterable(self.parser.get_surfaces(self.corpus_str))))
+    def calc_word_stats(self, verbose=False) -> dict:
+        c = Counter(self.parser.get_surfaces(self.corpus_str))
+
+        if verbose:
+            print(c)
 
         return dict(
             num_token=sum(c.values()),
             num_vocab=len(c.keys())
         )
 
-    def calc_char_stats(self) -> dict:
+    def calc_char_stats(self, verbose=False) -> dict:
         c = Counter(self.corpus_str)
+
+        if verbose:
+            print(c)
 
         return dict(
             num_token=sum(c.values()),

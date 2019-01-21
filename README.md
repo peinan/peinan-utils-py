@@ -7,7 +7,7 @@ Mostly about NLP.
 ## Install
 
 ```bash
-$ pip install -e git+https://github.com/peinan/peinan-utils-py#egg=peinan-utils
+$ pip install git+https://github.com/peinan/peinan-utils-py
 ```
 
 ## Usages & Features

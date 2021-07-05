@@ -64,7 +64,7 @@ $ pip install git+https://github.com/peinan/peinan-utils-py
 >>> p.get_surfaces(sumomo)
 ['すもも', 'も', 'もも', 'も', 'もも', 'の', 'うち']
 
->>> p.set_dict('/usr/local/lib/mecab/dic/mecab-ipadic-neologd')
+>>> p.set_dict('/usr/local/lib/mecab/dic/mecab-ipadic-neologd', is_dict_path=True)
 >>> p.get_surfaces(sumomo)
 ['すもももももももものうち']
 ```

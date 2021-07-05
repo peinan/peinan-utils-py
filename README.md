@@ -1,13 +1,13 @@
 # An util package for myself
 
-![](https://img.shields.io/badge/version-0.0.3-green.svg?style=flat-square) ![](https://img.shields.io/badge/python-3.6+-green.svg?style=flat-square) ![](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
+![](https://img.shields.io/badge/version-0.1.0-green.svg?style=flat-square) ![](https://img.shields.io/badge/python-3.6+-green.svg?style=flat-square) ![](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
 
 Mostly about NLP.
 
 ## Install
 
 ```bash
-$ pip install git+https://github.com/peinan/peinan-utils-py
+pip install peinan-utils
 ```
 
 ## Usages & Features

@@ -1,6 +1,6 @@
 # An util package for myself
 
-![](https://img.shields.io/badge/version-0.1.0-green.svg?style=flat-square) ![](https://img.shields.io/badge/python-3.6+-green.svg?style=flat-square) ![](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
+![](https://img.shields.io/badge/version-0.1.1-green.svg?style=flat-square) ![](https://img.shields.io/badge/python-3.6+-green.svg?style=flat-square) ![](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
 
 Mostly about NLP.
 

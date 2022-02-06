@@ -23,7 +23,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.7"
 mecab-python3 = "^1.0.4"
 ipadic = "^1.0.0"
 matplotlib = "^3.4.2"
